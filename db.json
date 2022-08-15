@@ -2,13 +2,13 @@
   "users": [
     {
       "id": 1,
-      "userId": 101,
-      "name": "Ngoc"
+      "name": "Ngoc Khuong",
+      "email": "me@ngockhuong.com"
     },
     {
       "id": 2,
-      "userId": 102,
-      "name": "Khuong"
+      "name": "Khuong Ngoc",
+      "email": "contact@ngockhuong.com"
     }
   ]
 }
