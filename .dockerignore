@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+Dockerfile
+docker-compose*
+renovate.json
+Procfile
+LICENSE
+README.md
+.dockerignore
+.gitignore
+.git
+.github
+.idea
+.vscode
