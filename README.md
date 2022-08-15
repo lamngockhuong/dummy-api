@@ -38,6 +38,7 @@ Dummy API
 ## Deploy
 ### Deploy to Heroku
 Heroku is a free hosting service for small projects. Easy setup and deploy from the command line via *git*.
+
 **Pros**:
 + Easy setup
 + Free
@@ -113,4 +114,5 @@ Same as Heroku, will sleep after a while.
 7. Press **Share** button to get your URL to live site. It should be something for example like: [https://dummy-api-test.glitch.me](https://dummy-api-test.glitch.me)
 
 ## Refer
++ [JSON Server](https://github.com/typicode/json-server)
 + [JSON Server Heroku](https://github.com/jesperorb/json-server-heroku)
