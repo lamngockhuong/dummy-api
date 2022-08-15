@@ -2,6 +2,7 @@
 Dummy API
 
 - [Create your database](#create-your-database)
+- [Run on Docker](#run-on-docker)
 - [Deploy](#deploy)
   * [Deploy to Heroku](#deploy-to-heroku)
   * [Deploy to Glitch](#deploy-to-glitch)
@@ -35,6 +36,33 @@ Dummy API
 }
 ```
 5. If you want to change home page template, please update the contents at `public/`
+
+## Run on Docker
+The recommended way to run this container looks like this:
+
+```bash
+$ DB_FILE=db.json && ROUTES_FILE=routes.json && docker run -d \
+--name dummy-api \
+-p 3000:3000 \
+-v $(pwd)/$DB_FILE:/app/db.json \
+-v $(pwd)/$ROUTES_FILE:/app/routes.json \
+lamngockhuong/dummy-api:latest
+```
+
+The above example exposes the JSON Server REST API on port 3000, so that you can now browse to: [http://localhost:3000](http://localhost:3000)
+
+This is a rather common setup following docker's conventions:
+
++ `-d` will run a detached instance in the background
++ `-p {OutsidePort}:3000` will bind the webserver to the given outside port
++ `-v {AbsolutePathToDBJsonFile}:/app/db.json` should be passed to mount the given **DB** JSON file into the container
++ `-v {AbsolutePathToRoutesJsonFile}:/app/routes.json` should be passed to mount the given **Routes** JSON file into the container
++ `lamngockhuong/dummy-api` the name of this docker image
+
+When you update db.json or routes.json, please restart dummy-api container:
+```
+$ docker restart dummy-api
+```
 ## Deploy
 ### Deploy to Heroku
 Heroku is a free hosting service for small projects. Easy setup and deploy from the command line via *git*.
