@@ -1,18 +1,24 @@
 name: Main
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
   workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v2
-      - name: Use Node.js
-        uses: action/setup-node@v2
+      - name: Checkout
+        uses: action/checkout@v3
+
+      - name: Setup Node
+        uses: action/setup-node@v3
         with:
           node-version: "16.x"
+          cache: npm
+
       - name: Install dependencies
-        run: npm Install
+        run: npm ci
