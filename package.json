@@ -9,7 +9,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "json-server": "0.17.0"
+    "json-server": "0.17.4"
   },
   "engines": {
     "node": "16.x",
